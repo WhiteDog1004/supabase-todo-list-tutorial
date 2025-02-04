@@ -1,3 +1,4 @@
+import ReactQueryClientProvider from "@/config/ReactQueryClientProvider";
 import { ThemeProvider } from "config/material-tailwind-theme-provider";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -24,7 +25,9 @@ export default function RootLayout({
 				/>
 			</head>
 			<body>
-				<ThemeProvider>{children}</ThemeProvider>
+				<ReactQueryClientProvider>
+					<ThemeProvider>{children}</ThemeProvider>
+				</ReactQueryClientProvider>
 			</body>
 		</html>
 	);
